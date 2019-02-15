@@ -1,14 +1,15 @@
 #coding=utf-8
 import unittest, doctest
-from XBT import test_xbt
+from XBT import test_xbt,web_unit
 import HTMLTestRunner
+from Configure import configures
 
 suite = doctest.DocTestSuite()
 #罗列要执行的文件
 suite.addTest(unittest.makeSuite(test_xbt.XBT))
-# suite.addTest(unittest.makeSuite(test_youdao.Youdao))
+suite.addTest(unittest.makeSuite(web_unit.Baidu))
 
-filename = 'D:\\pycharm_project\\webtest\\Report\\result_xbt.html'  # 定义个报告存放路径，支持相对路径。
+filename = configures.REPORT_FILE # 定义个报告存放路径，支持相对路径。
 fp = open(filename, 'wb')
 runner = HTMLTestRunner.HTMLTestRunner(
     stream=fp,

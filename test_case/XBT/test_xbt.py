@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time
+from Configure import configures
 
 
 class XBT(unittest.TestCase):
@@ -23,25 +24,25 @@ class XBT(unittest.TestCase):
         try:
             driver.find_element_by_link_text("首页").click()
         except:
-            driver.get_screenshot_as_file("D:\\pycharm_project\\webtest\\error_png\\xbt1.png")
+            driver.get_screenshot_as_file(configures.ERROT_PNG_PATH + "xbt1.png")
             #如果没有找到上面的元素就截取当前页面。
         try:
             driver.get(self.base_url + "/chanpina")
             driver.get(self.base_url + "/chanpinb")
         except:
-            driver.get_screenshot_as_file("D:\\pycharm_project\\webtest\\error_png\\xbt2.png")
+            driver.get_screenshot_as_file(configures.ERROT_PNG_PATH + "xbt2.png")
             #如果没有找到上面的元素就截取当前页面。
         try:
             driver.get(self.base_url + "/guanyu")
             driver.get(self.base_url + "/tuandui")
             driver.get(self.base_url + "/add")
         except:
-            driver.get_screenshot_as_file("D:\\pycharm_project\\webtest\\error_png\\xbt3.png")
+            driver.get_screenshot_as_file(configures.ERROT_PNG_PATH + "xbt3.png")
             # 如果没有找到上面的元素就截取当前页面。
         try:
             driver.get(self.base_url + "/recruitment")
         except:
-            driver.get_screenshot_as_file("D:\\pycharm_project\\webtest\\error_png\\xbt4.png")
+            driver.get_screenshot_as_file(configures.ERROT_PNG_PATH + "xbt4.png")
             # 如果没有找到上面的元素就截取当前页面。
 
         time.sleep(2)
