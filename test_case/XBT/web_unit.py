@@ -16,6 +16,7 @@ class Baidu(unittest.TestCase):
 
     #百度搜索用例
     def test_baidu_search(self):
+        u"""百度搜索用例"""
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("kw").send_keys("selenium webdriver")
@@ -25,6 +26,7 @@ class Baidu(unittest.TestCase):
 
     #百度设置用例
     def test_baidu_set(self):
+        u"""百度设置用例"""
         driver = self.driver
         # 进入搜索设置页
         driver.get(self.base_url + "/gaoji/preferences.html")
